@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>deltaX</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="/Users/shivankit/Downloads/design.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="top">
+  <!-- LOADER HERE POPO -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <!-- Loader content (e.g., spinner, text) -->
+      <img src="/static/img/inc_loader.svg" alt="">
+    </div>
+  </div>
+
+
+  <main>
+
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero">
+
+        <div class="container">
+          <div id="pogo">
+            <a href="#" class="logo">
+              <h2 id="labels">delta<i class="fa-brands fa-shake fa-x-twitter"></i></h2>
+            </a>
+          </div>
+          <div class="hero-content">
+            <h2 class="h1 hero-title">Precision Price Forecasting with LSTM in Liquid Markets<span><i
+                  class="fa-brands fa-x-twitter"></i></span></h1>
+              <div class="graph">
+                <div class="useless">
+                  <p class="hero-text">
+                    Partner with one of the world’s largest liquid market forecasting platform.
+                  </p>
+
+                  <div class="btn-group">
+                    <div style="background-color: transparent; border: none;" class="glassmorphism-container">
+                      <input
+                        style="background-color: transparent; border: none; border-bottom: 2px solid rgb(112, 104, 104); outline: none; text-align: center;"
+                        id="dabba" type="text" placeholder="BTC/USD">
+                    </div>
+                    <div class="containerr">
+                      <div class="dropdown">
+                        <button class="toggle-button" id="toggle-button">Time Interval <i
+                            class="fa-solid fa-chart-simple fa-beat-fade"></i></button>
+                        <div class="dropdown-content" id="dropdown-content">
+                          <a href="#" onclick="selectTimeFrame('5m')">5m</a>
+                          <a href="#" onclick="selectTimeFrame('15m')">15m</a>
+                          <a href="#" onclick="selectTimeFrame('1h')">1h</a>
+                          <a href="#" onclick="selectTimeFrame('4h')">4h</a>
+                          <a href="#" onclick="selectTimeFrame('1d')">1D</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- ----------------- -->
+                  <button class="btn btn-secondary" id="createButton">Create now</button>
+                </div>
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container" style="height:50vh;width:100%">
+                  <div id="tradingview_abb52" style="height:calc(100% - 32px);width:100%"></div>
+                  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                  <script type="text/javascript">
+                    new TradingView.widget(
+                      {
+                        "autosize": true,
+                        "symbol": "INDEX:BTCUSD",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "dark",
+                        "style": "1",
+                        "locale": "in",
+                        "enable_publishing": false,
+                        "allow_symbol_change": true,
+                        "container_id": "tradingview_abb52"
+                      }
+                    );
+                  </script>
+                </div>
+                </figure>
+
+                <!-- TradingView Widget END -->
+              </div>
+          </div>
+        </div>
+      </section>
+      <section class="model">
+        <section class="trending" id="food">
+          <section class="trending-sushi">
+            <div class="model_1">
+              <div class="trending__image model1 flex-center">
+                <img src="" id="image1" alt="sushi-5" data-aos="fade-left" />
+              </div>
+            </div>
+            <div class="model_2">
+              <div class="trending__content" data-aos="fade-right">
+                <div class="model_error">
+                  <ul class="trending__list flex-between">
+                    <li>
+                      <div class="trending__icon flex-center">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                      </div>
+                      <p id="maeValue">MAE: 0</p>
+                    </li>
+                    <li>
+                      <div class="trending__icon flex-center">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                      </div>
+                      <p id="mseValue">MSE: 472299.8536306846</p>
+                    </li>
+                    <li>
+                      <div class="trending__icon flex-center">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                      </div>
+                      <p id="rmseValue">RMSE: 687.2407537615072</p>
+                    </li>
+                  </ul>
+                </div>
+                <h3 class="sushi__title">Best Parameters
+                  <table>
+                    <tr>
+                      <th> <span id="unitsValue">172</span></th>
+                      <th> <span id="learningRateValue">0.006362099846161104</span></th>
+                    </tr>
+                    <tr>
+                      <th> <span id="epochsValue">36</span></th>
+                      <th> <span id="batchSizeValue">20</span></th>
+                    </tr>
+                  </table>
+                </h3>
+              </div>
+
+            </div>
+          </section>
+
+          <section class="trending-drinks">
+            <div style="margin-top: 60px;" class="model_3">
+              <div class="trending__content" data-aos="fade-left">
+
+                <h3 class="sushi__title">Model Architecture
+                </h3>
+                <p class="sushi__description">Model: sequential5 <br>
+                  Layer (type) Output Shape Param # <br>
+                  lstm_5 (LSTM) (None, 171) 118332 <br> <br>
+                  dense5 (Dense) (None, 1) 172 <br> <br>
+                  Total params: 118,504 <br>
+                  Trainable params: 118,504 <br>
+                  Non-trainable params: 0" <br>
+                </p>
+              </div>
+            </div>
+            <div class="model_4">
+              <div class="trending__image3 flex-center">
+                <img src="" id="image2" alt="sushi-4" data-aos="fade-right" />
+              </div>
+            </div>
+          </section>
+
+        </section>
+        <section class="table-pnl">
+          <h1>CSV Data</h1>
+          <div id="tableContainer"></div>
+        </section>
+        <section class="pnl">
+          <div class="pro">
+            <div class="pro-lo">
+              <img src="" id="image3" class="pnl-img" alt="">
+            </div>
+          </div>
+        </section>
+    </article>
+  </main>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script>
+    window.onload = function () {
+      window.scrollTo(0, 0);
+    };
+
+    let backendResponse = {};
+    document.body.style.overflow = 'hidden';
+    document.getElementById('createButton').addEventListener('click', function () {
+      // Getting the value of the input field
+      var inputText = document.getElementById('dabba').value;
+      document.body.style.overflow = 'hidden';
+      document.getElementById('loader').style.display = 'block';
+
+      // Checking if the input is not empty before logging
+      if (inputText.trim() !== '') {
+        var selectedTimeFrame = document.getElementById('toggle-button').textContent.split('(')[1].slice(0, -1);
+        console.log("Selected Time Frame:", selectedTimeFrame);
+        console.log("Input Text:", inputText);
+
+        // var value = document.getElementById('input').value;
+        $.ajax({
+          url: '/process',
+          type: 'POST',
+          contentType: 'application/json',
+          data: JSON.stringify({ 'pair': inputText, 'intervals': selectedTimeFrame }),
+          success: function (response) {
+            // document.getElementById('output').innerHTML = response.result;
+            backendResponse = JSON.parse(response.result);
+
+            // Call the function to update HTML with the received data
+            updateHTMLWithBackendResponse();
+            updateImagesWithNewPaths(backendResponse.images);
+            console.log(response.result)
+            document.getElementById('loader').style.display = 'none';
+            document.body.style.overflow = 'auto';
+
+            $.ajax({
+              type: "GET",
+              url: "/show_data",
+              dataType: "text",
+              success: function (data) {
+                var jsonData = JSON.parse(data);
+
+                // Create a table
+                var table = "<table id='chintu' border='1'>";
+
+                // Add table headers
+                table += "<thead><th class='heading'>Date</th><th class='heading'>Actual Price</th><th class='heading'>Predicted Price</th></thead>";
+
+                // Check if jsonData is an array and it's not empty
+                if (Array.isArray(jsonData) && jsonData.length > 0) {
+                  // Iterate through the data and populate the table rows
+                  jsonData.forEach(function (item) {
+                    if (item && item['Date'] && item['Actual Price'] && item['Predicted Price']) {
+                      table += "<tr>";
+                      table += "<td>" + item['Date'] + "</td>";
+                      table += "<td>" + item['Actual Price'] + "</td>";
+                      table += "<td>" + item['Predicted Price'] + "</td>";
+                      table += "</tr>";
+                    }
+                  });
+                } else {
+                  // If jsonData doesn't match the expected structure
+                  console.error("Data structure doesn't match the expected format.");
+                }
+
+                table += "</table>";
+
+                // Append the table to a div in your HTML
+                $('#tableContainer').html(table);
+              },
+              error: function (xhr, status, error) {
+                console.error("Error fetching data: " + error);
+              }
+            });
+
+
+          },
+          error: function (error) {
+            console.log(error);
+            document.body.style.overflow = 'hidden';
+          }
+        });
+
+
+      }
+    });
+    function selectTimeFrame(timeFrame) {
+
+      // Change the text of the button to the selected time frame
+      document.getElementById('toggle-button').textContent = `Time Interval (${timeFrame})`;
+      // You can perform additional actions here based on the selected time frame
+    }
+    // Updating the values in the HTML with the received backend data
+    function updateHTMLWithBackendResponse() {
+      if (Object.keys(backendResponse).length !== 0) {
+
+        // Updating the values in the HTML with the received backend data
+        document.getElementById('maeValue').textContent = `MAE: ${backendResponse.mae}`;
+        document.getElementById('mseValue').textContent = `MSE: ${backendResponse.mse}`;
+        document.getElementById('rmseValue').textContent = `RMSE: ${backendResponse.rmse}`;
+
+        document.getElementById('unitsValue').textContent = `Units: ${backendResponse.best_params.units}`;
+        document.getElementById('learningRateValue').textContent = `Learning rate: ${backendResponse.best_params.learning_rate}`;
+        document.getElementById('epochsValue').textContent = `Epochs: ${backendResponse.best_params.epochs}`;
+        document.getElementById('batchSizeValue').textContent = `Batch Size: ${backendResponse.best_params.batch_size}`;
+
+        const pTag = document.querySelector('.sushi__description');
+        const replacedText = backendResponse.output
+          .replace(/\n__\n/g, '<br>')
+          .replace(/\n={2,}\n/g, '<br>')
+          .replace(/\n(?!<br>)/g, '<br>');
+        // console.log(replacedText)
+        pTag.innerHTML = replacedText;
+
+        updateImagesWithNewPaths(backendResponse.images);
+      }
+    }
+    function updateImagesWithNewPaths(imagePaths) {
+      for (let i = 0; i < imagePaths.length; i++) {
+        const img = document.getElementById(`image${i + 1}`);
+        img.src = imagePaths[i] + '?timestamp=' + new Date().getTime();
+      }
+    }
+
+    // Update HTML elements with backend response after DOM content is loaded
+    document.addEventListener("DOMContentLoaded", function () {
+      updateHTMLWithBackendResponse();
+    });
+
+
+  </script>
+</body>
+
+</html>
