@@ -15,8 +15,10 @@ This is a modern, responsive landing page designed for a crypto price forecastin
 
 ## 📸 Preview
 
-![deltaX Landing Page Screenshot](<img width="1295" alt="Screenshot 2025-07-02 at 12 59 58 AM" src="https://github.com/user-attachments/assets/4c9ac21a-00a2-414e-ba2e-f8d1abd577bc" />
-)
+![deltaX Landing Page Screenshot]
+<img src="<img width="1295" alt="preview" src="https://github.com/user-attachments/assets/9076bc9f-697a-4eda-867b-5f3717b0e4ca" />
+" alt="Description of image">
+
 
 ---
 
